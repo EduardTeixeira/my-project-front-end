@@ -1,0 +1,69 @@
+<section class="align-content text-center">
+
+   <main class="form-signin">
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+         <div class="home-page">
+            <a routerLink="/">
+               <img class="mb-4" src="../favicon.ico" alt="" width="72" height="57">
+            </a>
+         </div>
+
+         <h1 class="h3 mb-3 fw-normal">
+            Bem-vindo
+         </h1>
+
+         <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+               formControlName="email" required>
+            <label for="floatingInput" class="label">
+               Email
+            </label>
+         </div>
+
+         <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+               formControlName="password" required>
+            <label for="floatingPassword" class="label">
+               Senha
+            </label>
+         </div>
+
+         <div class="checkbox mb-3">
+            <!--
+            <label>
+               <input type="checkbox" value="remember-me">
+               Manter-me logado
+            </label>
+            -->
+         </div>
+
+         <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">
+            Acessar
+         </button>
+
+         <div class="checkbox mb-3 newAccount">
+            <a class="newAccountLink" routerLink="./" (click)="openDialog()">
+               Esqueceu a sua senha?
+            </a>
+         </div>
+
+         <div class="checkbox mb-3 newAccount">
+            <label>
+               Ainda não tem conta?
+               <a class="newAccountLink" routerLink="/signup">
+                  Cadastre-se
+               </a>
+            </label>
+         </div>
+
+         <p class="mt-5 mb-3 text-muted">
+            &copy; 2020–2022
+         </p>
+
+      </form>
+
+   </main>
+
+</section>

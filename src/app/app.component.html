@@ -1,0 +1,9 @@
+<div style="height: 100%;">
+
+   <app-top-menu *ngIf="globalContextService.getShowMenu"></app-top-menu>
+
+   <router-outlet></router-outlet>
+
+   <app-footer *ngIf="globalContextService.getShowFooter"></app-footer>
+
+</div>
