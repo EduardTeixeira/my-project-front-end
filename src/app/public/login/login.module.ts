@@ -11,7 +11,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
-import { SharedComponentsModule } from './../../shared/components/shared-components.module';
 import { RecoveryPasswordDialogComponent } from './dialogs/recovery-password-dialog/recovery-password-dialog.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { RecoveryPasswordDialogComponent } from './dialogs/recovery-password-dia
       ReactiveFormsModule,
       MatIconModule,
       MatDialogModule,
-      SharedComponentsModule,
    ],
    declarations: [
       LoginComponent,

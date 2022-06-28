@@ -2,7 +2,6 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { SharedComponentsModule } from './../shared/components/shared-components.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ErrorComponent } from './components/error/error.component';
@@ -21,7 +20,6 @@ import { ErrorComponent } from './components/error/error.component';
       { path: '**', redirectTo: '/404' }
     ]),
     MatBadgeModule,
-    SharedComponentsModule,
   ],
   exports: [HeaderComponent]
 })

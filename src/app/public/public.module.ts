@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 
 import { PublicRoutingModule } from './public-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
-import { FooterModule } from '../shared/components/footer/footer.module';
 import { ProductComponent } from './product/product.component';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
 import { SignupComponent } from './signup/signup.component';
@@ -19,7 +18,6 @@ import { LoginModule } from './login/login.module';
       CommonModule,
       FormsModule,
       PublicRoutingModule,
-      FooterModule,
       RouterModule,
       LoginModule,
       MatFormFieldModule,

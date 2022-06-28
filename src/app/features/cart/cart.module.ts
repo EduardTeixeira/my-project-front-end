@@ -11,8 +11,6 @@ import { CodesComponent } from './pages/codes/codes.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { EmptyComponent } from './pages/empty/empty.component';
 import { EmptyCartGuard } from 'src/app/core/guards/empty-cart.guard';
-import { SharedComponentsModule } from 'src/app/shared/components/shared-components.module';
-
 
 @NgModule({
   declarations: [
@@ -35,7 +33,6 @@ import { SharedComponentsModule } from 'src/app/shared/components/shared-compone
     MatInputModule,
     MatMenuModule,
     ReactiveFormsModule,
-    SharedComponentsModule
   ]
 })
 export class CartModule { }

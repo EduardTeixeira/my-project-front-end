@@ -13,32 +13,42 @@ import { TitleComponent } from './title/title.component';
 import { SimplePageComponent } from './simple-page/simple-page.component';
 
 import { WordWrapPipe } from '../pipes/word-wrap/word-wrap.pipe';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FooterComponent } from './footer/footer.component';
+
+const components = [
+   TopMenuComponent,
+   TitleComponent,
+   SimplePageComponent,
+   SideMenuComponent,
+   PageNotFoundComponent,
+   FooterComponent,
+   ItemQuantityComponent
+];
 
 @NgModule({
-  declarations: [
-    SimplePageComponent,
-    TitleComponent,
-    ItemQuantityComponent,
-    WordWrapPipe,
-  ],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTooltipModule,
-    MatMenuModule,
-    RouterModule
-  ],
-  exports: [
-    CommonModule,
-    ItemQuantityComponent,
-    MatButtonModule,
-    MatIconModule,
-    MatSnackBarModule,
-    MatTooltipModule,
-    SimplePageComponent,
-    TitleComponent,
-    WordWrapPipe,
-  ],
+   imports: [
+      CommonModule,
+      MatIconModule,
+      MatButtonModule,
+      MatTooltipModule,
+      MatMenuModule,
+      RouterModule,
+   ],
+   declarations: [
+      WordWrapPipe,
+      ...components
+   ],
+   exports: [
+      CommonModule,
+      MatButtonModule,
+      MatIconModule,
+      MatSnackBarModule,
+      MatTooltipModule,
+      WordWrapPipe,
+      ...components
+   ],
 })
 export class SharedComponentsModule { }
