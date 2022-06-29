@@ -14,10 +14,14 @@ import { AppGuardService } from './app-guard.service';
 import { GlobalContextService } from './shared/services/global-context.service';
 import { OptionsInterceptor } from './core/interceptors/options.interceptor';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 @NgModule({
    declarations: [
       AppComponent,
+      AdminLayoutComponent,
+      AuthLayoutComponent,
    ],
    imports: [
       BrowserModule,

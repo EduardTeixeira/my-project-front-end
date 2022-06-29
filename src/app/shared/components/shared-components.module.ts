@@ -17,6 +17,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const components = [
    TopMenuComponent,
@@ -25,7 +27,9 @@ const components = [
    SideMenuComponent,
    PageNotFoundComponent,
    FooterComponent,
-   ItemQuantityComponent
+   ItemQuantityComponent,
+   SidebarComponent,
+   NavbarComponent
 ];
 
 @NgModule({
