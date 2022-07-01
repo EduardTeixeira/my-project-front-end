@@ -2,7 +2,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
 import { PricingComponent } from './pricing/pricing.component';
-import { LockComponent } from './lock/lock.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -10,12 +9,8 @@ const routes: Routes = [
       path: '',
       children: [
          {
-            path: 'login',
+            path: '',
             component: LoginComponent
-         },
-         {
-            path: 'lock',
-            component: LockComponent
          },
          {
             path: 'register',

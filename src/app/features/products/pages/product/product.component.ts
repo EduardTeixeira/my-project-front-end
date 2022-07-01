@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { UntilDestroy } from '@ngneat/until-destroy';
+
 import { map, mergeMap } from 'rxjs/operators';
-import { HeaderService } from 'src/app/core/services/header.service';
-import { Order } from 'src/app/data/models/order';
-import { Sku } from 'src/app/data/models/sku';
-import { CartService } from 'src/app/data/services/cart.service';
-import { LineItemService } from 'src/app/data/services/line-item.service';
-import { OrderService } from 'src/app/data/services/order.service';
-import { SkuService } from 'src/app/data/services/sku.service';
+
+import { Order } from './../../../../shared/models/order';
+import { Sku } from './../../../../shared/models/sku';
+import { CartService } from './../../../../shared/services/cart.service';
+import { LineItemService } from './../../../../shared/services/line-item.service';
+import { OrderService } from './../../../../shared/services/order.service';
+import { SkuService } from './../../../../shared/services/sku.service';
+import { HeaderService } from './../../../../shared/services/header.service';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

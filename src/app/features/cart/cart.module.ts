@@ -1,3 +1,5 @@
+import { SharedComponentsModule } from './../../shared/components/shared-components.module';
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CodesComponent } from './pages/codes/codes.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { EmptyComponent } from './pages/empty/empty.component';
-import { EmptyCartGuard } from 'src/app/core/guards/empty-cart.guard';
+import { EmptyCartGuard } from 'src/app/shared/guards/empty-cart.guard';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,12 @@ import { EmptyCartGuard } from 'src/app/core/guards/empty-cart.guard';
       },
       { path: 'empty', component: EmptyComponent }
     ]),
+    SharedComponentsModule,
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
+    MatIconModule,
     ReactiveFormsModule,
   ]
 })

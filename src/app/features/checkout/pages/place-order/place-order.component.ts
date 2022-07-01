@@ -4,10 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { iif } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
-import { GetOrderParams, UpdateOrderParams } from 'src/app/data/models/order';
-import { CartService } from 'src/app/data/services/cart.service';
-import { OrderService } from 'src/app/data/services/order.service';
-import { PaypalPaymentService } from 'src/app/data/services/paypal-payment.service';
+import { GetOrderParams, UpdateOrderParams } from './../../../../shared/models/order';
+import { CartService } from './../../../../shared/services/cart.service';
+import { OrderService } from './../../../../shared/services/order.service';
+import { PaypalPaymentService } from './../../../../shared/services/paypal-payment.service';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

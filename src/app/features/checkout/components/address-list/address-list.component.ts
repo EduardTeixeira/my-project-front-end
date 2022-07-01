@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { iif } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
-import { SessionService } from 'src/app/core/services/session.service';
+import { SessionService } from './../../../../shared/services/session.service';
 import { CustomerAddressService } from './../../../../shared/services/customer-address.service';
 import { CustomerAddress } from './../../../../shared/models/customer-address';
 

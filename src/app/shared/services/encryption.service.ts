@@ -2,77 +2,50 @@ import { Injectable } from '@angular/core';
 
 import * as forge from 'node-forge';
 
-import { environment } from './../../../environments/environment';
-
 @Injectable({
-    providedIn: 'root'
+   providedIn: 'root'
 })
 export class EncryptionService {
 
-    constructor() { }
+   publicKey: string = '';
+   privateKey: string = '';
 
-    private createCipher(): any {
-        const cipher = forge.cipher.createCipher('AES-CBC', forge.util.createBuffer(environment.CRYPTO_KEY));
-        cipher.start(
-            {
-                iv: environment.CRYPTO_IV,
-            }
-        );
-        return cipher;
-    }
+   constructor() { }
 
-    private createDecipher(): any {
-        const decipher = forge.cipher.createDecipher('AES-CBC', forge.util.createBuffer(environment.CRYPTO_KEY));
-        decipher.start(
-            {
-                iv: environment.CRYPTO_IV,
-            }
-        );
-        return decipher;
-    }
+   private createCipher(): any {
+      let _publicKey = `-----BEGIN PUBLIC KEY-----${this.publicKey}-----END PUBLIC KEY-----`;
+      const cipher = forge.pki.publicKeyFromPem(_publicKey);
+      return cipher;
+   }
 
-    encryptValue(data: any): any {
-        const cipher = this.createCipher();
-        cipher.update(
-            forge.util.createBuffer(
-                forge.util.encodeUtf8(data)
-            )
-        );
-        cipher.finish();
-        return forge.util.encode64(cipher.output.getBytes());
-    }
+   encryptValue(text: string): any {
+      const cipher = this.createCipher();
+      const encrypted = cipher.encrypt(forge.util.encodeUtf8(text));
+      return forge.util.encode64(encrypted);
+   }
 
-    decryptValue(data: any): any {
-        const decipher = this.createDecipher();
-        decipher.update(
-            forge.util.createBuffer(
-                forge.util.decode64(data)
-            )
-        );
-        decipher.finish();
-        return forge.util.decodeUtf8(decipher.output.getBytes());
-    }
+   encryptObject(data: any): any {
+      const cipher = this.createCipher();
+      const encrypted = cipher.encrypt(forge.util.encodeUtf8(JSON.stringify(data)));
+      return forge.util.encode64(encrypted);
+   }
 
-    encryptObject(data: any): any {
-        const cipher = this.createCipher();
-        cipher.update(
-            forge.util.createBuffer(
-                forge.util.encodeUtf8(JSON.stringify(data))
-            )
-        );
-        cipher.finish();
-        return forge.util.encode64(cipher.output.getBytes());
-    }
+   private createDecipher(): any {
+      let _publicKey: any = `-----BEGIN PUBLIC KEY-----${this.privateKey}-----END PUBLIC KEY-----`;
+      const decipher = forge.pki.privateKeyToPem(_publicKey);
+      return decipher;
+   }
 
-    decryptObject(data: any): any {
-        const decipher = this.createDecipher();
-        decipher.update(
-            forge.util.createBuffer(
-                forge.util.decode64(data)
-            )
-        );
-        decipher.finish();
-        return JSON.parse(forge.util.decodeUtf8(decipher.output.getBytes()));
-    }
+   decryptValue(text: string) {
+      const decipher = this.createDecipher();
+      const decrypted = decipher.decrypt(forge.util.decode64(text));
+      return forge.util.decodeUtf8(decrypted);
+   }
+
+   decryptObject(data: any): any {
+      const decipher = this.createDecipher();
+      const decrypted = decipher.decrypt(forge.util.decode64(JSON.stringify(data)));
+      return JSON.parse(forge.util.decodeUtf8(decrypted));
+   }
 
 }

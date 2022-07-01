@@ -3,9 +3,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { concat } from 'rxjs';
 
-import { SessionService } from '../../services/session.service';
-import { HeaderService } from '../../services/header.service';
-import { CartService } from './../../../shared/services/cart.service';
+import { SessionService } from '../../../shared/services/session.service';
+import { HeaderService } from '../../../shared/services/header.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
    selector: 'app-header',

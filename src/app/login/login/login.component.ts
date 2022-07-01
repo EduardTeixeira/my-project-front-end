@@ -1,4 +1,13 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Location } from '@angular/common';
+import { FormBuilder, Validators } from '@angular/forms';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { SessionService } from './../../shared/services/session.service';
+import { AuthenticationService } from './../../shared/services/authentication.service';
+import { RecoveryPasswordDialog } from '../recovery-password-dialog/recovery-password-dialog.component';
 
 declare var $: any;
 
@@ -9,12 +18,24 @@ declare var $: any;
 })
 export class LoginComponent implements OnInit {
 
-   test: Date = new Date();
+   loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+   });
+
    private toggleButton: any;
    private sidebarVisible: boolean;
    private nativeElement: Node;
 
-   constructor(private element: ElementRef) {
+   constructor(
+      private element: ElementRef,
+      private formBuilder: FormBuilder,
+      private authService: AuthenticationService,
+      private snackBar: MatSnackBar,
+      private session: SessionService,
+      private location: Location,
+      private dialog : MatDialog,
+   ) {
       this.nativeElement = element.nativeElement;
       this.sidebarVisible = false;
    }
@@ -44,6 +65,39 @@ export class LoginComponent implements OnInit {
          this.sidebarVisible = false;
          body.classList.remove('nav-open');
       }
+   }
+
+   login(): void {
+
+      const credentials = this.loginForm.value;
+
+      this.authService.login(credentials.email, credentials.password).subscribe(
+         () => {
+            this.session.setLoggedInStatus(true);
+            this.location.back();
+         },
+         (err) => {
+            this.snackBar.open(
+               'Falha na autenticação. Verifique seus dados de login.',
+               'Fechar',
+               { duration: 6000 }
+            );
+            this.loginForm.patchValue({ password: '' });
+         }
+      );
+   }
+
+   openDialog(): void {
+
+      const myDialog = this.dialog.open(RecoveryPasswordDialog, {
+         maxWidth: 420,
+         disableClose: true
+      });
+
+      myDialog.afterClosed().subscribe(result => {
+         console.log('The dialog was closed...');
+      });
+
    }
 
 }

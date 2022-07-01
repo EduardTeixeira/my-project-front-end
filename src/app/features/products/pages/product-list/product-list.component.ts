@@ -6,9 +6,9 @@ import { PageEvent } from '@angular/material/paginator';
 
 import { UntilDestroy } from '@ngneat/until-destroy';
 
-import { SkuService } from 'src/app/data/services/sku.service';
-import { Sku } from 'src/app/data/models/sku';
-import { HeaderService } from 'src/app/core/services/header.service';
+import { SkuService } from './../../../../shared/services/sku.service';
+import { Sku } from './../../../../shared/models/sku';
+import { HeaderService } from './../../../../shared/services/header.service';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

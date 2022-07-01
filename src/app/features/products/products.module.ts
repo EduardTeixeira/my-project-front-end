@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { SharedComponentsModule } from './../../shared/components/shared-components.module';
+import { SharedPipesModule } from './../../shared/pipes/shared-pipes.module';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@angular/cdk/layout';
 
@@ -8,8 +10,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-
 
 @NgModule({
   declarations: [ProductListComponent, ProductComponent],
@@ -18,11 +18,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
       { path: 'product/:id', component: ProductComponent },
       { path: '', component: ProductListComponent }
     ]),
+    SharedComponentsModule,
+    SharedPipesModule,
     LayoutModule,
     MatCardModule,
     MatGridListModule,
     MatPaginatorModule,
-    SharedModule
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProductsModule { }

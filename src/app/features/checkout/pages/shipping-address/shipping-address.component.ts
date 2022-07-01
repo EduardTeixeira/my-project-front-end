@@ -1,16 +1,16 @@
+import { Address } from './../../../../shared/models/address';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { combineLatest, concat, iif, Observable } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
-import { SessionService } from 'src/app/core/services/session.service';
-import { Address } from 'src/app/data/models/address';
-import { Order, UpdateOrderParams } from 'src/app/data/models/order';
-import { AddressService } from 'src/app/data/services/address.service';
-import { CartService } from 'src/app/data/services/cart.service';
-import { CustomerAddressService } from 'src/app/data/services/customer-address.service';
-import { OrderService } from 'src/app/data/services/order.service';
+import { SessionService } from './../../../../shared/services/session.service';
+import { AddressService } from './../../../../shared/services/address.service';
+import { CartService } from './../../../../shared/services/cart.service';
+import { CustomerAddressService } from './../../../../shared/services/customer-address.service';
+import { OrderService } from './../../../../shared/services/order.service';
+import { Order, UpdateOrderParams } from 'src/app/shared/models/order';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

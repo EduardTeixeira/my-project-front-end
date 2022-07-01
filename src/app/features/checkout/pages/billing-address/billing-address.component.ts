@@ -12,7 +12,7 @@ import { CustomerAddressService } from './../../../../shared/services/customer-a
 import { CartService } from './../../../../shared/services/cart.service';
 import { OrderService } from './../../../../shared/services/order.service';
 import { AddressService } from './../../../../shared/services/address.service';
-import { SessionService } from 'src/app/core/services/session.service';
+import { SessionService } from './../../../../shared/services/session.service';
 
 @Component({
   selector: 'app-billing-address',

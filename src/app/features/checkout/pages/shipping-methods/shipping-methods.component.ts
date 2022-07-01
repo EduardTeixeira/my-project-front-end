@@ -4,15 +4,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { combineLatest } from 'rxjs';
-import { DeliveryLeadTime } from 'src/app/data/models/delivery-lead-time';
-import { LineItem } from 'src/app/data/models/line-item';
-import { GetOrderParams } from 'src/app/data/models/order';
-import { Shipment } from 'src/app/data/models/shipment';
-import { ShippingMethod } from 'src/app/data/models/shipping-method';
-import { CartService } from 'src/app/data/services/cart.service';
-import { DeliveryLeadTimeService } from 'src/app/data/services/delivery-lead-time.service';
-import { OrderService } from 'src/app/data/services/order.service';
-import { ShipmentService } from 'src/app/data/services/shipment.service';
+import { DeliveryLeadTime } from './../../../../shared/models/delivery-lead-time';
+import { LineItem } from './../../../../shared/models/line-item';
+import { GetOrderParams } from './../../../../shared/models/order';
+import { Shipment } from './../../../../shared/models/shipment';
+import { ShippingMethod } from './../../../../shared/models/shipping-method';
+import { CartService } from './../../../../shared/services/cart.service';
+import { DeliveryLeadTimeService } from './../../../../shared/services/delivery-lead-time.service';
+import { OrderService } from './../../../../shared/services/order.service';
+import { ShipmentService } from './../../../../shared/services/shipment.service';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

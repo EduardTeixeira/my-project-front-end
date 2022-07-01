@@ -3,10 +3,10 @@ import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
-import { UpdateOrderParams } from 'src/app/data/models/order';
-import { CartService } from 'src/app/data/services/cart.service';
-import { CustomerService } from 'src/app/data/services/customer.service';
-import { OrderService } from 'src/app/data/services/order.service';
+import { UpdateOrderParams } from './../../../../shared/models/order';
+import { CartService } from './../../../../shared/services/cart.service';
+import { CustomerService } from './../../../../shared/services/customer.service';
+import { OrderService } from './../../../../shared/services/order.service';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

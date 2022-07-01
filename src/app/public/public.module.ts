@@ -10,8 +10,6 @@ import { PublicRoutingModule } from './public-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductComponent } from './product/product.component';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
-import { SignupComponent } from './signup/signup.component';
-import { LoginModule } from './login/login.module';
 
 @NgModule({
    imports: [
@@ -19,7 +17,6 @@ import { LoginModule } from './login/login.module';
       FormsModule,
       PublicRoutingModule,
       RouterModule,
-      LoginModule,
       MatFormFieldModule,
       MatInputModule,
       ReactiveFormsModule,
@@ -28,7 +25,6 @@ import { LoginModule } from './login/login.module';
    declarations: [
       HomePageComponent,
       ProductComponent,
-      SignupComponent,
    ],
    schemas: [
       CUSTOM_ELEMENTS_SCHEMA

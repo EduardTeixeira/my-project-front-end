@@ -3,6 +3,9 @@
  * ! version : 4.7.14
  * https://github.com/Eonasdan/bootstrap-datetimepicker/
  */
+
+ @use "sass:math";
+
  $bs-datetimepicker-timepicker-font-size: 1.2em !default;
  $bs-datetimepicker-active-bg: $brand-primary !default;
  $bs-datetimepicker-active-color: $white-color !default;
@@ -203,7 +206,7 @@
   -ms-transform: translateY(-$infix-margin-top - $infix-padding)
                  scale($font-scale);
 
-  width: 100% / $font-scale;
+  width: math.div(100% , $font-scale);
 }
 .mat-input-placeholder {
 

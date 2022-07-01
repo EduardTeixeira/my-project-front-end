@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PricingComponent implements OnInit {
 
-   test: Date = new Date();
-
    constructor() { }
 
    ngOnInit() {

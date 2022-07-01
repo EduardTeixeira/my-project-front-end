@@ -8,11 +8,11 @@ import {
 
 import { Observable } from 'rxjs';
 
-import { GlobalContextService } from './../../shared/services/global-context.service';
-import { EncryptionService } from './../../shared/services/encryption.service';
+import { GlobalContextService } from './shared/services/global-context.service';
+import { EncryptionService } from './shared/services/encryption.service';
 
 @Injectable()
-export class OptionsInterceptor implements HttpInterceptor {
+export class AppInterceptor implements HttpInterceptor {
 
    constructor(
       private globalContextService: GlobalContextService,

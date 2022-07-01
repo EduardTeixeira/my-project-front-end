@@ -3,19 +3,19 @@ import { FormControl, Validators } from '@angular/forms';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { PasswordService } from './../../../../shared/services/password.service';
+import { PasswordService } from '../../shared/services/password.service';
 
 @Component({
    selector: 'app-recovery-password-dialog',
    templateUrl: './recovery-password-dialog.component.html',
-   styleUrls: ['./recovery-password-dialog.component.css']
+   styleUrls: ['./recovery-password-dialog.component.scss']
 })
-export class RecoveryPasswordDialogComponent implements OnInit {
+export class RecoveryPasswordDialog implements OnInit {
 
    emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
    constructor(
-      public dialogRef: MatDialogRef<RecoveryPasswordDialogComponent>,
+      public dialogRef: MatDialogRef<RecoveryPasswordDialog>,
       private passwordService: PasswordService,
    ) { }
 

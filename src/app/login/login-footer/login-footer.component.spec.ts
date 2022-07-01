@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LockComponent } from './lock.component';
+import { LoginFooterComponent } from './login-footer.component';
 
-describe('LockComponent', () => {
-   let component: LockComponent;
-   let fixture: ComponentFixture<LockComponent>;
+describe('LoginFooterComponent', () => {
+   let component: LoginFooterComponent;
+   let fixture: ComponentFixture<LoginFooterComponent>;
 
    beforeEach(async () => {
       await TestBed.configureTestingModule({
-         declarations: [LockComponent]
+         declarations: [LoginFooterComponent]
       })
          .compileComponents();
    });
 
    beforeEach(() => {
-      fixture = TestBed.createComponent(LockComponent);
+      fixture = TestBed.createComponent(LoginFooterComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
    });
