@@ -1,0 +1,37 @@
+.header-container {
+   margin: 0.5em;
+}
+
+.primary-text,
+.second-text {
+   color: var(--deep-purple);
+}
+
+.primary-text {
+   font-weight: 600;
+}
+
+.second-text {
+   font-weight: 100;
+}
+
+.my-brand {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+}
+
+.my-brand:active,
+.my-brand:focus {
+   outline: 0;
+   border: none;
+   outline-style: none;
+}
+
+.my-icons {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-content: center;
+   align-items: center;
+}

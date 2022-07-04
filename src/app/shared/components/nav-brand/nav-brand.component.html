@@ -1,0 +1,73 @@
+<div class="main-content header-container">
+
+   <div class="container-fluid">
+
+      <div class="row">
+
+         <div class="col-sm-4">
+            <div class="my-brand" routerLink="/">
+               <h1>
+                  <span class="primary-text">
+                     My
+                  </span>
+                  <span class="second-text">
+                     Project
+                  </span>
+               </h1>
+            </div>
+         </div>
+
+         <div class="col-sm-4">
+            <div class="input-group">
+               <input type="search" class="form-control form-control-dark" aria-label="Search"
+                  placeholder="Faça uma pesquisa...">
+               <div class="input-group-append">
+                  <span class="input-group-text">
+                     <mat-icon matSuffix>search</mat-icon>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-4">
+
+            <div class="my-icons">
+
+               <button mat-icon-button color="primary" aria-label="login" *ngIf="!isLoggedIn">
+                  <mat-icon aria-label="login" matTooltip="login" routerLink="/login">account_circle</mat-icon>
+                  <span class="primary-text">
+                     Entre
+                  </span>
+                  <span class="second-text">
+                     ou
+                  </span>
+                  <span class="primary-text">
+                     cadastre-se
+                  </span>
+               </button>
+
+               <button mat-icon-button color="primary" aria-label="logout" (click)="logout()" *ngIf="isLoggedIn">
+                  <mat-icon aria-label="logout" matTooltip="logout">account_circle</mat-icon>
+                  <span class="primary-text">
+                     Minha Conta
+                  </span>
+               </button>
+
+               <div>
+                  <button mat-icon-button color="primary" aria-label="shopping cart">
+                     <mat-icon [matBadge]="cartAmount" matBadgeColor="accent" aria-label="shopping cart"
+                        routerLink="/cart">
+                        shopping_cart
+                     </mat-icon>
+                  </button>
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+
+</div>

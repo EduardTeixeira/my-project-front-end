@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+   selector: 'app-footer',
+   templateUrl: './footer.component.html',
+   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
 
-  year: number = 2021;
+   year: number = 2021;
 
-  constructor() { }
+   constructor() { }
 
-  ngOnInit() {
-    const date = new Date();
-    this.year = date.getFullYear();
-  }
+   ngOnInit() {
+      const date = new Date();
+      this.year = date.getFullYear();
+   }
 
 }

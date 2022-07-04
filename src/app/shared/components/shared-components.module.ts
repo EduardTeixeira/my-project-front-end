@@ -12,16 +12,14 @@ import { ItemQuantityComponent } from './item-quantity/item-quantity.component';
 import { TitleComponent } from './title/title.component';
 import { SimplePageComponent } from './simple-page/simple-page.component';
 
-import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HeaderComponent } from './header/header.component';
+import { NavBrandComponent } from './nav-brand/nav-brand.component';
 
 const components = [
-   TopMenuComponent,
    TitleComponent,
    SimplePageComponent,
    SideMenuComponent,
@@ -30,7 +28,7 @@ const components = [
    ItemQuantityComponent,
    SidebarComponent,
    NavbarComponent,
-   HeaderComponent
+   NavBrandComponent,
 ];
 
 @NgModule({
